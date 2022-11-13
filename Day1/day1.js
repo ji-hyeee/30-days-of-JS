@@ -2,11 +2,11 @@ const textarea = document.querySelector('#text');
 let voicelist = document.querySelector('#voice');
 let speechbtn = document.querySelector('.submit');
 
-let synth = speechSynthesis;
+let synth = speechSynthesis; // web speech API
 let isSpeaking = true;
 
 function voicespeech() {
-    for (let voice of synth.getVoices()) {
+    for (let voice of synth.getVoices()) { // return available voice object list
         let option = document.createElement('option');
         option.text = voice.name;
         voicelist.add(option);
@@ -14,17 +14,17 @@ function voicespeech() {
     }
 }
 
-synth.addEventListener('voiceschanged', voicespeech);
+synth.addEventListener('voiceschanged', voicespeech); // event
 
 function texttospeech(text) {
-    let utternance = new SpeechSynthesisUtterance(text);
+    let utternance = new SpeechSynthesisUtterance(text); // new instance
 
     for (let voice of synth.getVoices()) {
         if (voice.name === voicelist.value) {
             utternance.voice = voice;
         }
     }
-    speechSynthesis.speak(utternance);
+    speechSynthesis.speak(utternance); // speak method
 }
 
 speechbtn.addEventListener('click', (e) => {
