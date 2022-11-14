@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+h1 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+#game {
+    width: 400px;
+    height: 500px;
+    border: 3px solid black;
+    border-radius: 10px;
+    border-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    background-color: rgba(254, 254, 254, 0.07);
+}
+
+#character {
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+    top: 400px;
+    left: 190px;
+    overflow: hidden;
+    background-color: rgb(229, 121, 193);
+    z-index: 1;
+}
+
+.block {
+    width: 400px;
+    height: 20px;
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
+    overflow: hidden;
+    background: linear-gradient(rgb(153, 172, 235), rgb(42, 68, 245));
+    background-color: black;
+    -webkit-background-clip: border-box;
+    color: transparent;
+}
+
+.hole {
+    width: 40px;
+    height: 20px;
+    background-color: rgb(229, 121, 193);
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
+}
+
+.link {
+    width: 95vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+}
+
+.link a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    transform: scale(1.3);
+}
