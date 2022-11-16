@@ -50,7 +50,7 @@ h1 {
     overflow: hidden;
     background: linear-gradient(rgb(153, 172, 235), rgb(42, 68, 245));
     background-color: black;
-    -webkit-background-clip: border-box;
+    background-clip: border-box;
     color: transparent;
 }
 
