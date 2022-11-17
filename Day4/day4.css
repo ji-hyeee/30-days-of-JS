@@ -8,8 +8,8 @@
 body {
     background-color: #0581ca;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    ;
     align-items: center;
     min-height: 100vh;
 }
@@ -64,6 +64,20 @@ input::placeholder {
 }
 
 #button:hover {
-    color: white;
-    background-color: black;
+    color: rgb(20, 139, 250);
+    background-color: yellow;
+}
+
+.link {
+    display: flex;
+    margin: 20px;
+}
+
+.link a {
+    text-decoration: none;
+    color: black;
+}
+
+.link a:hover {
+    transform: scale(1.3);
 }
