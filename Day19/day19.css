@@ -1,0 +1,245 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+
+.checkbox {
+    display: none;
+}
+
+/* NIGHT */
+.toggle {
+    margin-top: 45vh;
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    height: 62px;
+    background: #484848;
+    border: 3px solid #222;
+    border-radius: 50px;
+    padding: 4px 4px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.disc {
+    display: inline-block;
+    position: relative;
+    background: #fffdf2;
+    border: 4px solid #e0e3c4;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    left: 0;
+    transform: rotate(0);
+    transition: 0.3s;
+}
+
+.disc i {
+    position: absolute;
+    background: #efeedb;
+    border: 3px solid #e0e3c4;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.disc i:first-of-type {
+    width: 7px;
+    height: 7px;
+    left: 2px;
+    top: 5px;
+}
+
+.disc i:nth-of-type(2) {
+    width: 13px;
+    height: 13px;
+    right: 3px;
+    top: 0;
+}
+
+.disc i:last-of-type {
+    width: 9px;
+    height: 9px;
+    right: 8px;
+    bottom: 2px;
+}
+
+.cloud {
+    display: inline-block;
+    position: absolute;
+    top: 28px;
+    left: 32px;
+    background: #fff;
+    border: 4px solid #d3d3d3;
+    border-radius: 10px;
+    width: 36px;
+    height: 20px;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.67, -0.01, 0.27, 1.45);
+}
+
+.cloud__sub1,
+.cloud__sub2 {
+    content: "";
+    display: block;
+    position: relative;
+    border: 4px solid #d3d3d3;
+    border-radius: 100%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.cloud__sub1:after,
+.cloud__sub2:after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.cloud__sub1 {
+    top: -9px;
+    right: -1px;
+    width: 18px;
+    height: 18px;
+    transform: rotateZ(47deg);
+}
+
+.cloud__sub1:after {
+    width: 11px;
+    height: 10px;
+    top: 0px;
+    left: 0px;
+}
+
+.cloud__sub2 {
+    top: -24px;
+    right: -15px;
+    width: 10px;
+    height: 10px;
+    transform: rotateZ(51deg);
+}
+
+.cloud__sub2:after {
+    top: -1px;
+    right: -6px;
+    width: 10px;
+    height: 9px;
+}
+
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.5s cubic-bezier(0.67, -0.01, 0.27, 1.8);
+}
+
+.star:first-of-type {
+    width: 4px;
+    height: 4px;
+    right: 45px;
+    top: 8px;
+    transition-delay: 0.1s;
+}
+
+.star:nth-of-type(2) {
+    width: 5px;
+    height: 5px;
+    right: 42px;
+    bottom: 8px;
+    transition-delay: 0.1s;
+}
+
+.star:nth-of-type(3) {
+    width: 3px;
+    height: 3px;
+    right: 33px;
+    top: 20px;
+    transition-delay: 0.1s;
+}
+
+.star:nth-of-type(4) {
+    width: 3px;
+    height: 3px;
+    right: 25px;
+    top: 33px;
+    transition-delay: 0.1s;
+}
+
+.star:nth-of-type(5) {
+    width: 4px;
+    height: 4px;
+    right: 16px;
+    top: 5px;
+    transition-delay: 0.05s;
+}
+
+.star:nth-of-type(6) {
+    width: 5px;
+    height: 5px;
+    right: 7px;
+    top: 24px;
+    transition-delay: 0.15s;
+}
+
+.star:nth-of-type(7) {
+    width: 3px;
+    height: 3px;
+    right: 12px;
+    bottom: 9px;
+    transition-delay: 0.25s;
+}
+
+/* DAY */
+.checkbox:checked+.toggle {
+    background: #c0e6f6;
+    border-color: #83c2d7;
+}
+
+.checkbox:checked+.toggle .disc {
+    background: #f5eb42;
+    border-color: #e3c64c;
+    left: 48px;
+    transform: rotate(110deg);
+}
+
+.checkbox:checked+.toggle .disc i:first-of-type,
+.checkbox:checked+.toggle .disc i:nth-of-type(2),
+.checkbox:checked+.toggle .disc i:last-of-type {
+    opacity: 0;
+}
+
+.checkbox:checked+.toggle .cloud {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.checkbox:checked+.toggle .star {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.link a {
+    color: black;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+.link a:hover {
+    transform: scale(1.3);
+    color: black;
+}
